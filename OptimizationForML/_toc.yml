@@ -6,4 +6,5 @@ root: intro
 chapters:
 - file: markdown
 - file: notebooks
-- file: lecture_00
+- file: lecture_00/lecture_00
+- file: lecture_01
