@@ -10,5 +10,10 @@ myst_enable_extensions = [
     "replacements",
     "smartquotes",
     "substitution",
-    "tasklist",
+    "tasklist"
+],
+extensions = [
+    'sphinx_proof',
+    'sphinxcontrib.bibtex'
 ]
+bibtex_bibfiles = ['references.bib']

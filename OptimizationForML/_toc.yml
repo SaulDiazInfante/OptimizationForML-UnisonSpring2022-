@@ -1,10 +1,7 @@
-# Table of contents
-# Learn more at https://jupyterbook.org/customize/toc.html
-
 format: jb-book
 root: intro
 chapters:
-- file: markdown
-- file: notebooks
-- file: lecture_00/lecture_00
-- file: lecture_01
+- file: lecture_00/lecture_00.md
+- file: lecture_00/numpy_primer.md
+- file: lecture_01/lecture_01.md
+
