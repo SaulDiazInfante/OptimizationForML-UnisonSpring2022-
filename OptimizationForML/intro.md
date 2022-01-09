@@ -71,9 +71,29 @@ like
 programming language.
 - Numerical methods and numerical analysis
 # Evaluation
-    Final Project 60 % of the grade.
-    Deadline May 13 2022 at 23:59
+```{note} The final grade is the sum of the acommulated points.
+You can always get as many points as you can bue no more than 
+100. Taht is, if you make 60 points with Exams and projects 
+but not with activites or exposition then you can recore point
+by a recovering project. If you obtain the 80 % of the points
+of the lectures activities the you can exempt the writing exam
+corresponding to the module course . 
+
+
+|   **Delivery**    |   **Points**       |     **Deadline**     |
+|:-----------------:|:------------------:|:--------------------:|
+|   Final Project   |        30          | May 13 2022 at 23:59 |
+| Writing Exams (3) | 15 (5 per exam)    |                      |
+| Code Exams   (3)  | 15 (5 per exam)    |                      |
+|    Exposition     | 15 (5 per session) |                      |
+| Lecture activity  | 1 per activity     |     Each Friday      |
+
 # Recovering projects
+```{important}
+Agree with teacher topic and delivery time.
+10 point per project.
+```
+ 
 # Bibliography
 ```{bibliography}
 :style: plain
