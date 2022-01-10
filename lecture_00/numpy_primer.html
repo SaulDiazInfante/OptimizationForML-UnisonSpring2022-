@@ -470,9 +470,9 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0.59531195, -1.82805981,  0.87248288, -0.61165564],
-       [-0.10065381, -0.40878934,  0.3588234 , -0.43098824],
-       [-0.8823436 ,  0.46732811,  0.00273159,  1.1159268 ]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0.395903  ,  0.02711316,  0.68651867,  0.76065618],
+       [ 2.61882469, -0.3942486 , -1.44147367, -0.71556699],
+       [ 0.34048424,  1.0057628 , -1.64979252,  0.30508413]])
 </pre></div>
 </div>
 </div>
@@ -586,8 +586,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-2.44695684, -0.22215677, -0.15626704,  0.04041908],
-       [ 1.16023805, -0.49416683,  0.01903186,  1.37402133]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 1.17397922,  0.09532664, -0.15453703, -0.18113126],
+       [ 1.56662025,  0.78141226,  1.10152823, -1.07424809]])
 </pre></div>
 </div>
 </div>
@@ -693,20 +693,24 @@
 (1, 4, 5)
 (5, 4)
 (10, 2)
-[[ 0.26108492  1.60617833 -0.43948157 -0.03751053 -2.27968608]
- [ 1.04974263 -1.54725986 -0.64557515  0.48247509  0.29695069]
- [ 0.73788233  0.34052361 -1.12140719  1.62727967 -1.2239915 ]
- [ 0.20979362  1.05988045  0.79328175 -1.59750943  0.07139983]]
-[[ 0.26108492  1.60617833]
- [-0.43948157 -0.03751053]
- [-2.27968608  1.04974263]
- [-1.54725986 -0.64557515]
- [ 0.48247509  0.29695069]
- [ 0.73788233  0.34052361]
- [-1.12140719  1.62727967]
- [-1.2239915   0.20979362]
- [ 1.05988045  0.79328175]
- [-1.59750943  0.07139983]]
+[[ 1.50369668e+00  2.61408304e+00  7.09715063e-01 -8.95790013e-01
+   6.59001691e-01]
+ [ 3.84436832e-02  1.67750410e+00 -9.08118675e-01  1.08671633e-03
+  -2.25819760e+00]
+ [-1.66914558e+00 -9.71421054e-01  5.94175933e-01 -1.77705987e+00
+  -3.04838077e-01]
+ [ 1.74456357e-01 -3.01470437e-01  1.41915839e-01 -1.70187860e+00
+   9.83912672e-01]]
+[[ 1.50369668e+00  2.61408304e+00]
+ [ 7.09715063e-01 -8.95790013e-01]
+ [ 6.59001691e-01  3.84436832e-02]
+ [ 1.67750410e+00 -9.08118675e-01]
+ [ 1.08671633e-03 -2.25819760e+00]
+ [-1.66914558e+00 -9.71421054e-01]
+ [ 5.94175933e-01 -1.77705987e+00]
+ [-3.04838077e-01  1.74456357e-01]
+ [-3.01470437e-01  1.41915839e-01]
+ [-1.70187860e+00  9.83912672e-01]]
 </pre></div>
 </div>
 </div>
@@ -872,7 +876,7 @@
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_31344</span><span class="o">/</span><span class="mf">11420762.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1593</span><span class="o">/</span><span class="mf">11420762.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">([</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">])</span> <span class="o">+</span> <span class="n">v</span> <span class="c1"># does not work</span>
 
 <span class="ne">ValueError</span>: operands could not be broadcast together with shapes (2,4) (2,) 
