@@ -1,0 +1,590 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Convexity &#8212; Optimization for Machine Learning (Mathematical Programming Spring 2022, Universidad de Sonora)</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Notebook Basics" href="../lecture_00/numpy_primer.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Optimization for Machine Learning (Mathematical Programming Spring 2022, Universidad de Sonora)</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Welcome to the Optimization for Machine Learning Course
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lecture_00/lecture_00.html">
+   Configuring a local distribution of python and friends
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lecture_00/numpy_primer.html">
+   Notebook Basics
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Convexity
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/lecture_01/lecture_01.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#theory-of-convex-functions">
+   Theory of Convex Functions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mathematical-background">
+     Mathematical Background
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#notation">
+       Notation
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-cauchy-schwarz-inequality">
+       The Cauchy-Schwarz inequality
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-spectral-norm">
+       The spectral norm
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-mean-value-theorem">
+       The mean value theorem
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-fundamental-theorem-of-calculus">
+       The fundamental theorem of calculus
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#differentiability">
+       Differentiability
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#convex-sets">
+     Convex sets
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-mean-value-inequality">
+       The mean value inequality
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#convex-functions">
+     Convex functions
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#first-order-characterization-of-convexity">
+       First-order characterization of convexity
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#second-order-characterization-of-convexity">
+       Second-order characterization of convexity
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#operations-that-preserve-convexity">
+       Operations that preserve convexity
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#minimizing-convex-functions">
+       Minimizing convex functions
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#strictly-convex-functions">
+       Strictly convex functions
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-least-squares">
+       Example: Least squares
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#constrained-minimization">
+       Constrained Minimization
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#existence-of-a-minimizer">
+       Existence of a minimizer
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sublevel-sets-and-the-weierstrass-theorem">
+       Sublevel sets and the Weierstrass Theorem
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#examples">
+       Examples
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#handwritten-digit-recognition">
+       Handwritten digit recognition
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#masters-admission">
+       Master’s Admission
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="convexity">
+<h1>Convexity<a class="headerlink" href="#convexity" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="theory-of-convex-functions">
+<h2>Theory of Convex Functions<a class="headerlink" href="#theory-of-convex-functions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="mathematical-background">
+<h3>Mathematical Background<a class="headerlink" href="#mathematical-background" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="notation">
+<h4>Notation<a class="headerlink" href="#notation" title="Permalink to this headline">¶</a></h4>
+<p>Let <span class="math notranslate nohighlight">\(\mathbf{u}\)</span> a vectors in <span class="math notranslate nohighlight">\(\mathbb{R}^d\)</span> (we use bold font), and for their
+coordinates <span class="math notranslate nohighlight">\( \mathbf{u} = (u_1, \dots , u_d)\)</span>.
+We consider vectors as column vectors,
+unless they are explicitly transposed. So
+<span class="math notranslate nohighlight">\(\mathbf{u}\)</span> is a column vector, and its transpose <span class="math notranslate nohighlight">\(\mathbf{u}^\top\)</span>,
+is a row vector. We denote by <span class="math notranslate nohighlight">\(\mathbf{u}^{\top} \mathbf{v}\)</span>
+the usual scalar product, that is</p>
+<div class="math notranslate nohighlight">
+\[ 
+    \mathbf{u}^{\top} \mathbf{v} = \sum_{i = 1} ^ d u_i v_i. 
+\]</div>
+<p>We use
+<span class="math notranslate nohighlight">\(\|\cdot\|\)</span> to denote the euclidean norm in <span class="math notranslate nohighlight">\(\mathbb{R}^d\)</span>. Thus</p>
+<div class="math notranslate nohighlight">
+\[ \|\mathbf{u}\|^ 2 = \mathbf{u} ^ {\top} \mathbf{u} = \sum_{i=1} ^ d x_i^2. \]</div>
+</div>
+<div class="section" id="the-cauchy-schwarz-inequality">
+<h4>The Cauchy-Schwarz inequality<a class="headerlink" href="#the-cauchy-schwarz-inequality" title="Permalink to this headline">¶</a></h4>
+<div class="proof lemma admonition" id="thmCauchuSchwarz">
+<p class="admonition-title"><span class="caption-number">Lemma 1 </span> (Cauchy-Schwarz inequality)</p>
+<div class="lemma-content section" id="proof-content">
+<p>See e.g. <span id="id1"></span>.
+For all <span class="math notranslate nohighlight">\(\mathbf{u}, \mathbf{v} \in \mathbb{R}^d\)</span> ,</p>
+<div class="math notranslate nohighlight">
+\[
+    |\mathbf{u}^{T} \mathbf{v}| \leq  
+    \| \mathbf{u}\| \| \mathbf{v} \|.
+\]</div>
+</div>
+</div><div class="proof admonition" id="proof">
+<p>Proof.     Let <span class="math notranslate nohighlight">\(\mathbf{u},  \mathbf{v}\)</span> in <span class="math notranslate nohighlight">\(\mathbb{R}^d\)</span>. Note that</p>
+<div class="math notranslate nohighlight">
+\[
+    \leq 0|\lambda \mathbf{u} + \mathbf{v}|, \qquad 
+    \forall \lambda \in \mathbb{R}. 
+\]</div>
+<p>Further,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+    \begin{aligned}
+        |\lambda \mathbf{u} + \mathbf{v}| ^ 2 
+        &amp;=
+            (\lambda \mathbf{u} + \mathbf{v})^{\top}
+            (\lambda \mathbf{u} + \mathbf{v})
+        \\
+        &amp;=
+       \underbrace{
+            \lambda ^ 2  \mathbf{u}^{\top} \mathbf{u}
+            + 2 \lambda  \mathbf{u}^{\top} \mathbf{v}
+            + \mathbf{v}^{\top} \mathbf{v}
+       }_{:= p(\lambda)}
+    \end{aligned}
+\end{equation*}\]</div>
+<p>Since the square polinomial <span class="math notranslate nohighlight">\(p(\lambda)\)</span> reachs its minimum at</p>
+<div class="math notranslate nohighlight">
+\[
+    \lambda = 
+        - \frac{\mathbf{u}^{\top} \mathbf{v}}{
+            \| \mathbf{u} \| ^ 2
+        },
+\]</div>
+<p>and <span class="math notranslate nohighlight">\(p(\lambda) \geq 0\)</span>, we deduce that</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+    \begin{aligned}
+        &amp;
+        p(\lambda) = 
+            \left(
+                - \frac{\mathbf{u}^{\top} \mathbf{v}}{
+                        \| \mathbf{u} \| ^ 2}
+            \right)
+            \mathbf{u}^{\top} \mathbf{u}
+            +
+            2 \left(
+                - \frac{\mathbf{u}^{\top} \mathbf{v}}{
+            \| \mathbf{u} \| ^ 2}
+            \right)
+            \mathbf{u}^{\top} \mathbf{v}
+            +
+            \mathbf{u}^{\top} \mathbf{v}
+        \\
+        \text{that is} &amp;
+        \\
+        &amp;
+        \|\mathbf{v}\|^2
+        - \frac{\mathbf{u}^{\top} \mathbf{v}}{\| \mathbf{u} \| ^ 2}
+        \geq 0.   
+    \end{aligned}
+\end{equation*}\]</div>
+<p>Then</p>
+<div class="math notranslate nohighlight">
+\[    
+        \left(
+            \mathbf{u}^{\top} \mathbf{v}
+        \right)^ 2 
+        \leq \|\mathbf{u}\| ^ 2 \|\mathbf{u}\|^2.
+\]</div>
+<p>Therefore, taking square root we obtain the regarding
+inequality \qued .</p>
+</div>
+</div>
+<div class="section" id="the-spectral-norm">
+<h4>The spectral norm<a class="headerlink" href="#the-spectral-norm" title="Permalink to this headline">¶</a></h4>
+<div class="proof definition admonition" id="definition-1">
+<p class="admonition-title"><span class="caption-number">Definition 1 </span> (Spectral norm)</p>
+<div class="definition-content section" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(A\)</span> be an <span class="math notranslate nohighlight">\((m \times d)\)</span>-matrix. Then</p>
+<div class="math notranslate nohighlight">
+\[
+    \| A\|:= 
+        \max_{\mathbf{v} \in \mathbb{R}^d, \mathbf{v} \neq 0} 
+                \frac{\|A \mathbf{v}\|}{\|\mathbf{v}\|}
+        =
+        \max_{\mathbf{v} \in \mathbb{R}^d, \mathbf{v} = 1}
+            \|A \mathbf{v}\|.    
+\]</div>
+</div>
+</div><p>We also recall two very important results from
+classic calculus: the mean value theorem and the fundamental Theorem
+of calculus see e.g. [Cite Spivak ] for details.</p>
+</div>
+<div class="section" id="the-mean-value-theorem">
+<h4>The mean value theorem<a class="headerlink" href="#the-mean-value-theorem" title="Permalink to this headline">¶</a></h4>
+<div class="proof theorem admonition" id="theorem-2">
+<p class="admonition-title"><span class="caption-number">Theorem 1 </span> (Mean value theorem)</p>
+<div class="theorem-content section" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(a &lt; b\)</span> be real numbers, and let
+<span class="math notranslate nohighlight">\(h :[a, b] \to \mathbb{R}\)</span> be a continuous function
+that is differentiable on <span class="math notranslate nohighlight">\((a, b)\)</span>.<br />
+Then there exists <span class="math notranslate nohighlight">\(c \in (a, b)\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[
+    h'(c) = \frac{ h(b) − h(a)}{b − a}.
+\]</div>
+</div>
+</div></div>
+<div class="section" id="the-fundamental-theorem-of-calculus">
+<h4>The fundamental theorem of calculus<a class="headerlink" href="#the-fundamental-theorem-of-calculus" title="Permalink to this headline">¶</a></h4>
+<div class="proof theorem admonition" id="theorem-3">
+<p class="admonition-title"><span class="caption-number">Theorem 2 </span> (Fundamental theorem of calculus)</p>
+<div class="theorem-content section" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(a &lt; b\)</span> be real numbers, and let
+<span class="math notranslate nohighlight">\(h : \mathrm{dom} (h) \to \mathbb{R}\)</span> be a differentiable
+function on an open domain
+<span class="math notranslate nohighlight">\(\mathrm{dom} (h)\)</span>  , and such that <span class="math notranslate nohighlight">\(h'\)</span> is
+continuous on <span class="math notranslate nohighlight">\([a, b]\)</span>. Then</p>
+<div class="math notranslate nohighlight">
+\[
+    h(b)-h(a) = \int_{a}^b 
+        h'(t) dt.
+\]</div>
+</div>
+</div></div>
+<div class="section" id="differentiability">
+<h4>Differentiability<a class="headerlink" href="#differentiability" title="Permalink to this headline">¶</a></h4>
+</div>
+</div>
+<div class="section" id="convex-sets">
+<h3>Convex sets<a class="headerlink" href="#convex-sets" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="the-mean-value-inequality">
+<h4>The mean value inequality<a class="headerlink" href="#the-mean-value-inequality" title="Permalink to this headline">¶</a></h4>
+</div>
+</div>
+<div class="section" id="convex-functions">
+<h3>Convex functions<a class="headerlink" href="#convex-functions" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="first-order-characterization-of-convexity">
+<h4>First-order characterization of convexity<a class="headerlink" href="#first-order-characterization-of-convexity" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="second-order-characterization-of-convexity">
+<h4>Second-order characterization of convexity<a class="headerlink" href="#second-order-characterization-of-convexity" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="operations-that-preserve-convexity">
+<h4>Operations that preserve convexity<a class="headerlink" href="#operations-that-preserve-convexity" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="minimizing-convex-functions">
+<h4>Minimizing convex functions<a class="headerlink" href="#minimizing-convex-functions" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="strictly-convex-functions">
+<h4>Strictly convex functions<a class="headerlink" href="#strictly-convex-functions" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="example-least-squares">
+<h4>Example: Least squares<a class="headerlink" href="#example-least-squares" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="constrained-minimization">
+<h4>Constrained Minimization<a class="headerlink" href="#constrained-minimization" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="existence-of-a-minimizer">
+<h4>Existence of a minimizer<a class="headerlink" href="#existence-of-a-minimizer" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="sublevel-sets-and-the-weierstrass-theorem">
+<h4>Sublevel sets and the Weierstrass Theorem<a class="headerlink" href="#sublevel-sets-and-the-weierstrass-theorem" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="examples">
+<h4>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="handwritten-digit-recognition">
+<h4>Handwritten digit recognition<a class="headerlink" href="#handwritten-digit-recognition" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="masters-admission">
+<h4>Master’s Admission<a class="headerlink" href="#masters-admission" title="Permalink to this headline">¶</a></h4>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lecture_01"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../lecture_00/numpy_primer.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Notebook Basics</p>
+        </div>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Saul Diaz Infante Velasco, CONACYT-Universidad  de Sonora<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
