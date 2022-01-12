@@ -11,7 +11,7 @@ kernelspec:
   name: python3
 ---
 
-#Python Primer
+# Python Primer
 
 ```{admonition} If you dont gets runing yet a local python
 installaton use the loaded book on google-colab at

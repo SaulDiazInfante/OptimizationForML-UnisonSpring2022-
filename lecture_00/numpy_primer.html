@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Notebook Basics &#8212; Optimization for Machine Learning (Mathematical Programming Spring 2022, Universidad de Sonora)</title>
+    <title>Python Primer &#8212; Optimization for Machine Learning (Mathematical Programming Spring 2022, Universidad de Sonora)</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -105,7 +105,7 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Notebook Basics
+   Python Primer
   </a>
  </li>
  <li class="toctree-l1">
@@ -189,6 +189,11 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
+   Python Primer
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notebook-basics">
    Notebook Basics
   </a>
  </li>
@@ -296,7 +301,8 @@
         
               <div>
                 
-  <p>#Python Primer</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="python-primer">
+<h1>Python Primer<a class="headerlink" href="#python-primer" title="Permalink to this headline">¶</a></h1>
 <div class="admonition-if-you-dont-gets-runing-yet-a-local-python admonition">
 <p class="admonition-title">If you dont gets runing yet a local python</p>
 <p>installaton use the loaded book on google-colab at
@@ -330,6 +336,7 @@
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>You are running Python 3. Good job :)
 </pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -470,9 +477,9 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0.395903  ,  0.02711316,  0.68651867,  0.76065618],
-       [ 2.61882469, -0.3942486 , -1.44147367, -0.71556699],
-       [ 0.34048424,  1.0057628 , -1.64979252,  0.30508413]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0.33006367,  0.17273829, -0.46213629,  0.49635952],
+       [-1.38555089, -0.32184401, -0.30284939,  2.30818603],
+       [ 1.69423226, -0.62621481,  0.60276153, -1.3677485 ]])
 </pre></div>
 </div>
 </div>
@@ -586,8 +593,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 1.17397922,  0.09532664, -0.15453703, -0.18113126],
-       [ 1.56662025,  0.78141226,  1.10152823, -1.07424809]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0.27293327, -0.44299385, -0.23958398, -0.87652295],
+       [ 1.69788746,  0.33470466,  2.43820639,  0.72225271]])
 </pre></div>
 </div>
 </div>
@@ -693,24 +700,20 @@
 (1, 4, 5)
 (5, 4)
 (10, 2)
-[[ 1.50369668e+00  2.61408304e+00  7.09715063e-01 -8.95790013e-01
-   6.59001691e-01]
- [ 3.84436832e-02  1.67750410e+00 -9.08118675e-01  1.08671633e-03
-  -2.25819760e+00]
- [-1.66914558e+00 -9.71421054e-01  5.94175933e-01 -1.77705987e+00
-  -3.04838077e-01]
- [ 1.74456357e-01 -3.01470437e-01  1.41915839e-01 -1.70187860e+00
-   9.83912672e-01]]
-[[ 1.50369668e+00  2.61408304e+00]
- [ 7.09715063e-01 -8.95790013e-01]
- [ 6.59001691e-01  3.84436832e-02]
- [ 1.67750410e+00 -9.08118675e-01]
- [ 1.08671633e-03 -2.25819760e+00]
- [-1.66914558e+00 -9.71421054e-01]
- [ 5.94175933e-01 -1.77705987e+00]
- [-3.04838077e-01  1.74456357e-01]
- [-3.01470437e-01  1.41915839e-01]
- [-1.70187860e+00  9.83912672e-01]]
+[[-0.43611639 -0.43432567 -0.38926281  0.13349982  1.51951015]
+ [-1.89777125 -0.82613616  0.12387773 -0.37490748  0.32293345]
+ [ 1.50074387 -0.59249045  0.75587181  1.44543618  1.34985868]
+ [-1.65637472 -0.84667811  0.44225178  0.92996236  0.10650819]]
+[[-0.43611639 -0.43432567]
+ [-0.38926281  0.13349982]
+ [ 1.51951015 -1.89777125]
+ [-0.82613616  0.12387773]
+ [-0.37490748  0.32293345]
+ [ 1.50074387 -0.59249045]
+ [ 0.75587181  1.44543618]
+ [ 1.34985868 -1.65637472]
+ [-0.84667811  0.44225178]
+ [ 0.92996236  0.10650819]]
 </pre></div>
 </div>
 </div>
@@ -876,7 +879,7 @@
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1593</span><span class="o">/</span><span class="mf">11420762.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_20406</span><span class="o">/</span><span class="mf">11420762.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">([</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">])</span> <span class="o">+</span> <span class="n">v</span> <span class="c1"># does not work</span>
 
 <span class="ne">ValueError</span>: operands could not be broadcast together with shapes (2,4) (2,) 

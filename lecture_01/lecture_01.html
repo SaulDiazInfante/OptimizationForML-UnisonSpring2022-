@@ -54,7 +54,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Notebook Basics" href="../lecture_00/numpy_primer.html" />
+    <link rel="prev" title="Python Primer" href="../lecture_00/numpy_primer.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -106,7 +106,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../lecture_00/numpy_primer.html">
-   Notebook Basics
+   Python Primer
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -348,7 +348,7 @@ the usual scalar product, that is</p>
 <div class="proof lemma admonition" id="thmCauchuSchwarz">
 <p class="admonition-title"><span class="caption-number">Lemma 1 </span> (Cauchy-Schwarz inequality)</p>
 <div class="lemma-content section" id="proof-content">
-<p>See e.g. <span id="id1"></span>.
+<p>See e.g. <span id="id1">Marsden [<a class="reference internal" href="#id11">1993</a>]</span>.
 For all <span class="math notranslate nohighlight">\(\mathbf{u}, \mathbf{v} \in \mathbb{R}^d\)</span> ,</p>
 <div class="math notranslate nohighlight">
 \[
@@ -446,7 +446,7 @@ inequality \qued .</p>
 </div>
 </div><p>We also recall two very important results from
 classic calculus: the mean value theorem and the fundamental Theorem
-of calculus see e.g. [Cite Spivak ] for details.</p>
+of calculus see e.g. <span id="id2">Spivak [<a class="reference internal" href="#id14">2008</a>]</span> for details.</p>
 </div>
 <div class="section" id="the-mean-value-theorem">
 <h4>The mean value theorem<a class="headerlink" href="#the-mean-value-theorem" title="Permalink to this headline">¶</a></h4>
@@ -482,11 +482,143 @@ continuous on <span class="math notranslate nohighlight">\([a, b]\)</span>. Then
 </div></div>
 <div class="section" id="differentiability">
 <h4>Differentiability<a class="headerlink" href="#differentiability" title="Permalink to this headline">¶</a></h4>
+<p>See for example <span id="id3">Marsden [<a class="reference internal" href="#id11">1993</a>]</span>.</p>
+<div class="proof definition admonition" id="dfn_differentiability">
+<p class="admonition-title"><span class="caption-number">Definition 2 </span></p>
+<div class="definition-content section" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(f: \mathrm{dom}(f)\subseteq \mathbb{R}^d \to \mathbb{R}^{m}\)</span>.
+A function <span class="math notranslate nohighlight">\(f\)</span> is called differentiable at
+<span class="math notranslate nohighlight">\(\mathbf{x}\subseteq \mathrm{dom}(f)\)</span> if there exist an
+<span class="math notranslate nohighlight">\((m\times d)-\)</span> matrix <span class="math notranslate nohighlight">\(A\)</span> an error function
+<span class="math notranslate nohighlight">\(r:\mathbb{R}^{d}\to \mathbb{R}\)</span> defined on a neighborhood of
+the vector <span class="math notranslate nohighlight">\(\mathbf{0} \in \mathbb{R}^d\)</span> such that for all
+<span class="math notranslate nohighlight">\(\mathbf{y}\)</span> in a neighborhood of <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+    \begin{aligned}
+        &amp; f(\mathbf{y}) =
+        f(\mathbf{x}) + A (\mathbf{y}-\mathbf{x}) + 
+        r(\mathbf{y}-\mathbf{x}),
+        \\
+        \text{ such that } &amp;
+        \\
+        &amp; \lim_{\mathbf{v} \to \mathbf{0}}
+            \frac{
+                \|r(\mathbf{v})\|
+            }{
+                \|\mathbf{v}\|
+            }
+            =0 .
+    \end{aligned}
+\end{equation*}\]</div>
+</div>
+</div><p>Results that matrix <span class="math notranslate nohighlight">\(A\)</span> is unique. This matrix is the so-called
+differential or Jacobian of <span class="math notranslate nohighlight">\(f\)</span> at <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>.
+We will denote it by <span class="math notranslate nohighlight">\(Df(\mathbf{x})\)</span>. More precisely,
+<span class="math notranslate nohighlight">\(Df(\mathbf{x})\)</span> is the matrix of partial derivatives at
+the point <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>,</p>
+<div class="math notranslate nohighlight" id="equation-eqn-jacobian">
+<span class="eqno">(1)<a class="headerlink" href="#equation-eqn-jacobian" title="Permalink to this equation">¶</a></span>\[\begin{split}
+    \begin{aligned}
+         D f ( \mathbf{x} )_{ij} 
+        &amp;= 
+            \frac{\partial f_i}{\partial x_j}(\mathbf{x})
+        \\
+        &amp; = 
+        \begin{pmatrix}
+            \frac{\partial f_1}{\partial x_1}(\mathbf{x})
+                &amp; \cdots
+                &amp; \frac{\partial f_d}{\partial x_1}(\mathbf{x})
+            \\
+                \vdots &amp; \ddots &amp; \vdots
+            \\ 
+            \frac{\partial f_1}{\partial x_m}(\mathbf{x})
+                &amp; \cdots
+                &amp; \frac{\partial f_d}{\partial x_m}(\mathbf{x})
+        \end{pmatrix}.
+    \end{aligned}
+\end{split}\]</div>
+<p>We say that  <span class="math notranslate nohighlight">\(f\)</span> is differentiable  if for all
+<span class="math notranslate nohighlight">\(x \in \mathbf{dom}(f)\)</span> the above limit exists
+(which implies that <span class="math notranslate nohighlight">\(\mathrm{dom}(f)\)</span> is open).</p>
+<p>Differentiability at <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> means that in some neighborhood of
+<span class="math notranslate nohighlight">\(\mathbf{x}\)</span>, <span class="math notranslate nohighlight">\(f\)</span> is approximated by a (unique) affine function
+<span class="math notranslate nohighlight">\(
+    f(\mathbf{x})
+    + D f(\mathbf{\mathbf{x}})(\mathbf{y}
+    − \mathbf{x})
+\)</span>, up to a sublinear error term. If <span class="math notranslate nohighlight">\(m = 1\)</span>,
+<span class="math notranslate nohighlight">\(Df(\mathbf{x})\)</span> is a row vector typically denoted by
+<span class="math notranslate nohighlight">\(\nabla f(\mathbf{x})\)</span>, where the (column) vector
+<span class="math notranslate nohighlight">\(\nabla  f(\mathbf{x})\)</span> is called the gradient of
+<span class="math notranslate nohighlight">\(f\)</span> at <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>. Geometrically, this means that the graph of
+the affine function
+<span class="math notranslate nohighlight">\(
+    f(\mathbf{x}) 
+    + \nabla f(\mathbf{x}) ^ {\top}
+    (\mathbf{y} − \mathbf{x})
+\)</span> is a tangent hyperplane to the graph of <span class="math notranslate nohighlight">\(f\)</span>
+at <span class="math notranslate nohighlight">\((\mathbf{x}, f(\mathbf{x}))\)</span>.</p>
+<div class="proof lemma admonition" id="lemma-5">
+<p class="admonition-title"><span class="caption-number">Lemma 2 </span> (Chain rule)</p>
+<div class="lemma-content section" id="proof-content">
+<p>Let
+<span class="math notranslate nohighlight">\(f: \mathrm{dom}(f) \to \mathbb{R}^m, \mathrm{dom}(f) \subseteq \mathbb{R}^d\)</span>
+and <span class="math notranslate nohighlight">\(\mathbb{g}: \mathrm{dom}(g) \to \mathbb{R}^d\)</span>.
+Suppose that <span class="math notranslate nohighlight">\(g\)</span> is differentiable at <span class="math notranslate nohighlight">\(\mathbf{x} \in \mathrm{dom}(g)\)</span>
+and that <span class="math notranslate nohighlight">\(f\)</span> is differentiable at <span class="math notranslate nohighlight">\(g(x) \in \mathrm{dom}(f)\)</span>.
+Then <span class="math notranslate nohighlight">\(f \circ g\)</span> (the composition of <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(g\)</span>) is
+differentiable at <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>, with the differential given by</p>
+<div class="math notranslate nohighlight">
+\[
+    D(f \circ  g)(x) = Df(g(x))\ Dg(x).
+\]</div>
+</div>
+</div><p>The following change of variable is very useful.
+Let <span class="math notranslate nohighlight">\(f : \mathrm{dom} (f) \to \mathbb{R}^m\)</span> be a differentiable
+function with (open) convex domain, and fix
+<span class="math notranslate nohighlight">\(\mathbf{x}, \mathbf{y} \in \mathrm{dom}(f)\)</span>. There is an open
+interval <span class="math notranslate nohighlight">\(I\)</span> containing <span class="math notranslate nohighlight">\([0, 1]\)</span> such that
+<span class="math notranslate nohighlight">\(
+    \mathbf{x} + t (\mathbf{y} − \mathbf{x}) \in \mathrm{dom}(f)
+\)</span> for all <span class="math notranslate nohighlight">\(t \in I\)</span>.
+Define <span class="math notranslate nohighlight">\(g : I \to \mathbb{R} ^ d\)</span> by</p>
+<div class="math notranslate nohighlight" id="equation-eqn-convex-changue">
+<span class="eqno">(2)<a class="headerlink" href="#equation-eqn-convex-changue" title="Permalink to this equation">¶</a></span>\[
+    g(t) := \mathbf{x} +  t (\mathbf{y} - \mathbf{x})
+\]</div>
+<p>and set</p>
+<div class="math notranslate nohighlight">
+\[
+    h := f \circ g 
+        = f(\mathbf{x} + t (\mathbf{y} - \mathbf{x})).
+\]</div>
+<p>Then <span class="math notranslate nohighlight">\( h:[0,1] \to \mathbb{R}^{m}\)</span> and</p>
+<div class="math notranslate nohighlight">
+\[
+    \begin{aligned}
+        h^\prime (t) = D f(g(t))\ D g(t)
+            = D f ( \mathbf{x} + t (\mathbf{y} - \mathbf{x}))\  
+                (\mathbf{y} - \mathbf{x})
+    \end{aligned}
+\]</div>
 </div>
 </div>
 <div class="section" id="convex-sets">
 <h3>Convex sets<a class="headerlink" href="#convex-sets" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="the-mean-value-inequality">
+<div class="proof definition admonition" id="definition-6">
+<p class="admonition-title"><span class="caption-number">Definition 3 </span></p>
+<div class="definition-content section" id="proof-content">
+<p>A set <span class="math notranslate nohighlight">\(C \subseteq \mathbb{R}^{d}\)</span> is convex if for any two
+points <span class="math notranslate nohighlight">\(\mathbf{x}, \mathbf{y} \in C\)</span>, the connecting line
+segment is contained in <span class="math notranslate nohighlight">\(C\)</span>. That is</p>
+<div class="math notranslate nohighlight">
+\[
+    \lambda \mathbf{x} (1 - \lambda) \mathbf{y} \in C, 
+    \quad \forall \lambda \in [0, 1].
+\]</div>
+</div>
+</div><div class="section" id="the-mean-value-inequality">
 <h4>The mean value inequality<a class="headerlink" href="#the-mean-value-inequality" title="Permalink to this headline">¶</a></h4>
 </div>
 </div>
@@ -527,6 +659,15 @@ continuous on <span class="math notranslate nohighlight">\([a, b]\)</span>. Then
 </div>
 <div class="section" id="masters-admission">
 <h4>Master’s Admission<a class="headerlink" href="#masters-admission" title="Permalink to this headline">¶</a></h4>
+<p id="id4"><dl class="citation">
+<dt class="label" id="id11"><span class="brackets">1</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id3">2</a>)</span></dt>
+<dd><p>Jerrold E. Marsden. <em>Elementary classical analysis</em>. W. H. Freeman and Co., San Francisco, 2 edition, 1993.</p>
+</dd>
+<dt class="label" id="id14"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>Michael Spivak. <em>Calculus</em>. Publish or Perish, 4 edition, 2008. ISBN 0914098918; 9780914098911. URL: <a class="reference external" href="libgen.li/file.php?md5=22f0de2176c2fb79b0a352c8e94fbd64">libgen.li/file.php?md5=22f0de2176c2fb79b0a352c8e94fbd64</a>.</p>
+</dd>
+</dl>
+</p>
 </div>
 </div>
 </div>
@@ -561,7 +702,7 @@ continuous on <span class="math notranslate nohighlight">\([a, b]\)</span>. Then
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Notebook Basics</p>
+            <p class="prev-next-title">Python Primer</p>
         </div>
     </a>
 </div>

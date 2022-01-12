@@ -111,7 +111,8 @@ Agree with teacher topic and delivery time.
  
 # Bibliography
 The main references for the thoery are the Books of
-{cite:ts}`Boyd2004,Guller2010`. The applications to Data Science and other
+{cite:ts}`Boyd2004,Guller2010,Marsden1993`. 
+The applications to Data Science and other
 programming topics can be found on {cite:ts}`VanderPlas2016`.
 
 ```{bibliography}
