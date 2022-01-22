@@ -93,9 +93,9 @@ you can exempt the writing exam corresponding to the module.
 |:-----------------:|:------------------:|:--------------------:|
 |   Final Project   |         30         | May 13 2022 at 23:59 |
 | Writing Exams (3) |  30 (10 per exam)  |      **Dates**       |
- |                   |                    |   Jan 28 2022 at *   |
-|                   |                    |   Feb 25 2022 at *   |  
-|                   |                    |   Mar 25 2022 at *   |
+ |                   |                    | Jan 28 2022 at 15.00 |
+|                   |                    | Feb 25 2022 at 15.00 |  
+|                   |                    | Mar 25 2022 at 15.00 |
  | Code Exams   (3)  |  30 (10 per exam)  |    **Deadlines**     |
  |                   |                    | Feb 5 2022 at 23:59  |
 |                   |                    | Mar 5 2022 at 23:59  |

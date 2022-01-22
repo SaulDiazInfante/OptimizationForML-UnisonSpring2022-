@@ -7,7 +7,7 @@
 #### Notation
 
 Let $\mathbf{u}$ a vectors in $\mathbb{R}^d$ (we use bold font), and for their
-coordinates $ \mathbf{u} = (u_1, \dots , u_d)$. 
+coordinates $ \mathbf{u} = (u_1, \dots , u_d) ^ {\top} $. 
 We consider vectors as column vectors, 
 unless they are explicitly transposed. So 
 $\mathbf{u}$ is a column vector, and its transpose $\mathbf{u}^\top$, 
@@ -40,13 +40,13 @@ $$
     Let $\mathbf{u},  \mathbf{v}$ in $\mathbb{R}^d$. Note that
     
 $$
-    \leq 0|\lambda \mathbf{u} + \mathbf{v}|, \qquad 
+    0 \leq \|\lambda \mathbf{u} + \mathbf{v}\|, \qquad 
     \forall \lambda \in \mathbb{R}. 
 $$
 Further, 
 \begin{equation*}
     \begin{aligned}
-        |\lambda \mathbf{u} + \mathbf{v}| ^ 2 
+        \|\lambda \mathbf{u} + \mathbf{v}\| ^ 2 
         &=
             (\lambda \mathbf{u} + \mathbf{v})^{\top}
             (\lambda \mathbf{u} + \mathbf{v})
@@ -124,8 +124,22 @@ $$
 We also recall two very important results from
 classic calculus: the mean value theorem and the fundamental Theorem
 of calculus see e.g. {cite:ts}`Spivak2008` for details.
+
 #### The mean value theorem
-```{prf:theorem} Mean value theorem
+Before enunciate the mean value Theorem we write a previous 
+result that gives a tool to prove the mean value Theorem quite
+clear and easy.
+```{prf:theorem} Rolle's Theorem
+   Let $f$ a realvalued function 
+   $
+    f: [a,b] \subset M \to \mathbb{R}
+   $.
+   If $f$ is continuous on $[a,b]$ and differentiable on
+   $(a, b)$, then there exist $x \in (a,b)$ such that
+   $f'(x) = 0$.
+```
+
+```{prf:theorem} Mean value Theorem
 Let $a < b$ be real numbers, and let 
 $h :[a, b] \to \mathbb{R}$ be a continuous function
 that is differentiable on $(a, b)$.    
@@ -286,6 +300,60 @@ $$
     \quad \forall \lambda \in [0, 1].
 $$
 ```
+
+```{prf:proposition}
+Let $X_1$ and $X_2$ two convex sets from $\mathbb{R}^d$. 
+Then 
+$ X_1 \cap X_2$ is a convex set.
+```
+#### The convex hull 
+We need the following lineal combination kinds.
+```{prf:definition}
+Let 
+$
+    M:= \{ \mathbf{x}_1,\dots, \mathbf{x}_m\}
+    \subset
+    \mathbb{R} ^ d  
+$, take
+        
+$$
+    \mathbf{x} := \sum_{i=1}^ {m} \alpha_i \mathbf{x}_i.
+$$
+Then we say that $\mathbf{x}$ is
+- lineal combination of $M$ if $\alpha_i \in \mathbb{R}$.
+- non-negative-lineal combination of $M$ if  $\alpha_i > 0$.
+- convex-lineal combination if $\alpha_i \in [0, 1]$ and
+  $ \displaystyle \sum_{i=1} ^ m \alpha_i = 1$.
+```
+    
+```{prf:definition} Convex hull
+Let $S$ and arbitrary set of $\mathbb{R}^d$. We denote the convex
+hull of $S$ by
+    
+$$
+    H(S) := 
+        \left \{
+            \mathbf{x} \in S:
+            \mathbf{x} = 
+            \sum_{i=1} ^ d
+                \alpha_i \mathbf{x}_i,
+                \text{ is lineal-convex-combination of elments from $S$}
+        \right \} .
+$$
+```
+The following Proposition establish the convexity for the image of linear
+functions.
+```{prf:proposition}
+Let $S \subset \mathbb{R} ^ d$ a convex set and 
+$f: \mathbb{R}^d \to \mathbb{R} ^ m$. Then the image of 
+$S$ under $f$, $f(S)$ is a convex set. 
+```
+
+```{prf:proof} **[prj_q_01]**
+    Let $\mathbf{x} ^ {\prime}, \mathbf{y} ^ {\prime} \in f(S)$
+    and $\lambda \in [0, 1]$.
+```
+
 #### The mean value inequality
 
 ### Convex functions
