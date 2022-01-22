@@ -238,6 +238,11 @@
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#operations-that-preserve-convexity">
+       Operations that preserve convexity
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#the-mean-value-inequality">
        The mean value inequality
       </a>
@@ -260,7 +265,7 @@
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#operations-that-preserve-convexity">
+      <a class="reference internal nav-link" href="#id4">
        Operations that preserve convexity
       </a>
      </li>
@@ -386,6 +391,11 @@
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#operations-that-preserve-convexity">
+       Operations that preserve convexity
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#the-mean-value-inequality">
        The mean value inequality
       </a>
@@ -408,7 +418,7 @@
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#operations-that-preserve-convexity">
+      <a class="reference internal nav-link" href="#id4">
        Operations that preserve convexity
       </a>
      </li>
@@ -499,7 +509,7 @@ the usual scalar product, that is</p>
 <div class="proof lemma admonition" id="thmCauchuSchwarz">
 <p class="admonition-title"><span class="caption-number">Lemma 1 </span> (Cauchy-Schwarz inequality)</p>
 <div class="lemma-content section" id="proof-content">
-<p>See e.g. <span id="id1">Marsden [<a class="reference internal" href="#id11">1993</a>]</span>.
+<p>See e.g. <span id="id1">Marsden [<a class="reference internal" href="#id12">1993</a>]</span>.
 For all <span class="math notranslate nohighlight">\(\mathbf{u}, \mathbf{v} \in \mathbb{R}^d\)</span> ,</p>
 <div class="math notranslate nohighlight">
 \[
@@ -597,7 +607,7 @@ inequality \qued .</p>
 </div>
 </div><p>We also recall two very important results from
 classic calculus: the mean value theorem and the fundamental Theorem
-of calculus see e.g. <span id="id2">Spivak [<a class="reference internal" href="#id14">2008</a>]</span> for details.</p>
+of calculus see e.g. <span id="id2">Spivak [<a class="reference internal" href="#id15">2008</a>]</span> for details.</p>
 </div>
 <div class="section" id="the-mean-value-theorem">
 <h4>The mean value theorem<a class="headerlink" href="#the-mean-value-theorem" title="Permalink to this headline">¶</a></h4>
@@ -647,7 +657,7 @@ continuous on <span class="math notranslate nohighlight">\([a, b]\)</span>. Then
 </div></div>
 <div class="section" id="differentiability">
 <h4>Differentiability<a class="headerlink" href="#differentiability" title="Permalink to this headline">¶</a></h4>
-<p>See for example <span id="id3">Marsden [<a class="reference internal" href="#id11">1993</a>]</span>.</p>
+<p>See for example <span id="id3">Marsden [<a class="reference internal" href="#id12">1993</a>]</span>.</p>
 <div class="proof definition admonition" id="dfn_differentiability">
 <p class="admonition-title"><span class="caption-number">Definition 2 </span></p>
 <div class="definition-content section" id="proof-content">
@@ -728,7 +738,9 @@ at <span class="math notranslate nohighlight">\((\mathbf{x}, f(\mathbf{x}))\)</s
 <p class="admonition-title"><span class="caption-number">Lemma 2 </span> (Chain rule)</p>
 <div class="lemma-content section" id="proof-content">
 <p>Let
-<span class="math notranslate nohighlight">\(f: \mathrm{dom}(f) \to \mathbb{R}^m, \mathrm{dom}(f) \subseteq \mathbb{R}^d\)</span>
+<span class="math notranslate nohighlight">\(
+    f: \mathrm{dom}(f) \to \mathbb{R}^m,
+     \mathrm{dom}(f) \subseteq \mathbb{R}^d\)</span>
 and <span class="math notranslate nohighlight">\(\mathbb{g}: \mathrm{dom}(g) \to \mathbb{R}^d\)</span>.
 Suppose that <span class="math notranslate nohighlight">\(g\)</span> is differentiable at <span class="math notranslate nohighlight">\(\mathbf{x} \in \mathrm{dom}(g)\)</span>
 and that <span class="math notranslate nohighlight">\(f\)</span> is differentiable at <span class="math notranslate nohighlight">\(g(x) \in \mathrm{dom}(f)\)</span>.
@@ -831,8 +843,11 @@ hull of <span class="math notranslate nohighlight">\(S\)</span> by</p>
         \right \} .
 \]</div>
 </div>
-</div><p>The following Proposition establish the convexity for the image of linear
-functions.</p>
+</div></div>
+<div class="section" id="operations-that-preserve-convexity">
+<h4>Operations that preserve convexity<a class="headerlink" href="#operations-that-preserve-convexity" title="Permalink to this headline">¶</a></h4>
+<p>The following Propositions establish the convexity for the image of linear
+functions and the set that results of common set operations.</p>
 <div class="proof proposition admonition" id="proposition-11">
 <p class="admonition-title"><span class="caption-number">Proposition 2 </span></p>
 <div class="proposition-content section" id="proof-content">
@@ -841,11 +856,44 @@ functions.</p>
 <span class="math notranslate nohighlight">\(S\)</span> under <span class="math notranslate nohighlight">\(f\)</span>, <span class="math notranslate nohighlight">\(f(S)\)</span> is a convex set.</p>
 </div>
 </div><div class="proof admonition" id="proof">
-<p>Proof. <strong>[prj_q_01]</strong>
+<p>Proof. **[prj_q_01]. **
 Let <span class="math notranslate nohighlight">\(\mathbf{x} ^ {\prime}, \mathbf{y} ^ {\prime} \in f(S)\)</span>
 and <span class="math notranslate nohighlight">\(\lambda \in [0, 1]\)</span>.</p>
 </div>
+<div class="proof proposition admonition" id="proposition-12">
+<p class="admonition-title"><span class="caption-number">Proposition 3 </span></p>
+<div class="proposition-content section" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(\left\{X_i \subset \mathbb{R} ^ d, \  i \in I  \right\}\)</span>
+a family of convex sets. Then the following sets also are convex.</p>
+<ol>
+<li><p>The arbritrary intersection
+<span class="math notranslate nohighlight">\(
+    X:= \displaystyle \bigcap \limits_{i \in I} X_i
+\)</span></p></li>
+<li><p>The cartesian product
+<span class="math notranslate nohighlight">\(X:= \displaystyle \prod_{i \in I} X_i\)</span></p></li>
+<li><p>If <span class="math notranslate nohighlight">\(I:= \{1, \dots, m \}\)</span> the finite sum
+<span class="math notranslate nohighlight">\(
+     X := \sum_{i = 1} ^ {m}
+         X_i 
+ \)</span>, where</p>
+<div class="math notranslate nohighlight">
+\[
+         \sum_{i = 1} ^ {m}
+            X_i :=
+                 \left\{
+                    \mathbf{x} \in \mathbb{R}^d :
+                    \mathbf{x} = 
+                        \sum_{i = 1} ^ {m} 
+                        \mathbf{x}_i,
+                    \quad
+                    \mathbf{x}_i \in X_i, \ i = 1, \dots, m
+                 \right\}
+    \]</div>
+</li>
+</ol>
 </div>
+</div></div>
 <div class="section" id="the-mean-value-inequality">
 <h4>The mean value inequality<a class="headerlink" href="#the-mean-value-inequality" title="Permalink to this headline">¶</a></h4>
 </div>
@@ -858,8 +906,8 @@ and <span class="math notranslate nohighlight">\(\lambda \in [0, 1]\)</span>.</p
 <div class="section" id="second-order-characterization-of-convexity">
 <h4>Second-order characterization of convexity<a class="headerlink" href="#second-order-characterization-of-convexity" title="Permalink to this headline">¶</a></h4>
 </div>
-<div class="section" id="operations-that-preserve-convexity">
-<h4>Operations that preserve convexity<a class="headerlink" href="#operations-that-preserve-convexity" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id4">
+<h4>Operations that preserve convexity<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
 </div>
 <div class="section" id="minimizing-convex-functions">
 <h4>Minimizing convex functions<a class="headerlink" href="#minimizing-convex-functions" title="Permalink to this headline">¶</a></h4>
@@ -887,11 +935,11 @@ and <span class="math notranslate nohighlight">\(\lambda \in [0, 1]\)</span>.</p
 </div>
 <div class="section" id="masters-admission">
 <h4>Master’s Admission<a class="headerlink" href="#masters-admission" title="Permalink to this headline">¶</a></h4>
-<p id="id4"><dl class="citation">
-<dt class="label" id="id11"><span class="brackets">1</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id3">2</a>)</span></dt>
+<p id="id5"><dl class="citation">
+<dt class="label" id="id12"><span class="brackets">1</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id3">2</a>)</span></dt>
 <dd><p>Jerrold E. Marsden. <em>Elementary classical analysis</em>. W. H. Freeman and Co., San Francisco, 2 edition, 1993.</p>
 </dd>
-<dt class="label" id="id14"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dt class="label" id="id15"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
 <dd><p>Michael Spivak. <em>Calculus</em>. Publish or Perish, 4 edition, 2008. ISBN 0914098918; 9780914098911. URL: <a class="reference external" href="libgen.li/file.php?md5=22f0de2176c2fb79b0a352c8e94fbd64">libgen.li/file.php?md5=22f0de2176c2fb79b0a352c8e94fbd64</a>.</p>
 </dd>
 </dl>

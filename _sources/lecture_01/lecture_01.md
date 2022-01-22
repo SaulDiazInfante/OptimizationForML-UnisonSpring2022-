@@ -247,7 +247,9 @@ at $(\mathbf{x}, f(\mathbf{x}))$.
 
 ```{prf:lemma} Chain rule
 Let 
-$f: \mathrm{dom}(f) \to \mathbb{R}^m, \mathrm{dom}(f) \subseteq \mathbb{R}^d$
+$
+    f: \mathrm{dom}(f) \to \mathbb{R}^m,
+     \mathrm{dom}(f) \subseteq \mathbb{R}^d$
 and $\mathbb{g}: \mathrm{dom}(g) \to \mathbb{R}^d$. 
 Suppose that $g$ is differentiable at $\mathbf{x} \in \mathrm{dom}(g)$ 
 and that $f$ is differentiable at $g(x) \in \mathrm{dom}(f)$. 
@@ -341,18 +343,48 @@ $$
         \right \} .
 $$
 ```
-The following Proposition establish the convexity for the image of linear
-functions.
+#### Operations that preserve convexity
+The following Propositions establish the convexity for the image of linear
+functions and the set that results of common set operations.
 ```{prf:proposition}
 Let $S \subset \mathbb{R} ^ d$ a convex set and 
 $f: \mathbb{R}^d \to \mathbb{R} ^ m$. Then the image of 
 $S$ under $f$, $f(S)$ is a convex set. 
 ```
-
-```{prf:proof} **[prj_q_01]**
+```{prf:proof} **[prj_q_01]. **
     Let $\mathbf{x} ^ {\prime}, \mathbf{y} ^ {\prime} \in f(S)$
     and $\lambda \in [0, 1]$.
 ```
+```{prf:proposition}
+Let $\left\{X_i \subset \mathbb{R} ^ d, \  i \in I  \right\}$ 
+a family of convex sets. Then the following sets also are convex.
+1.  The arbritrary intersection
+    $
+        X:= \displaystyle \bigcap \limits_{i \in I} X_i
+    $
+2. The cartesian product
+    $X:= \displaystyle \prod_{i \in I} X_i$
+
+3. If $I:= \{1, \dots, m \}$ the finite sum
+    $
+        X := \sum_{i = 1} ^ {m}
+            X_i 
+    $, where 
+    
+    $$
+         \sum_{i = 1} ^ {m}
+            X_i :=
+                 \left\{
+                    \mathbf{x} \in \mathbb{R}^d :
+                    \mathbf{x} = 
+                        \sum_{i = 1} ^ {m} 
+                        \mathbf{x}_i,
+                    \quad
+                    \mathbf{x}_i \in X_i, \ i = 1, \dots, m
+                 \right\}
+    $$
+```
+
 
 #### The mean value inequality
 
